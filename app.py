@@ -35,5 +35,10 @@ elif files == "Video":
         st.video(video_bytes)
 
 
+if st.button("Get Transcript"):
+    pass
+
+model_sizes = ['Small', 'Medium','Large']
+capacity = st.radio('Model Sizes for Transcript', model_sizes)
 
 
