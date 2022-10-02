@@ -1,0 +1,6 @@
+streamlit
+pytube 
+pandas
+plotly
+pydub
+git+https://github.com/openai/whisper.git 
