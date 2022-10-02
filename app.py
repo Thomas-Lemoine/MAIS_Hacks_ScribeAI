@@ -1,6 +1,8 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+from youtube import *
+from youtube import get_transcript
 
 st.set_page_config(layout="wide")
 
@@ -9,13 +11,10 @@ st.sidebar.markdown("This web app uses OpenAI’s new open-source Speech-to-text
 st.sidebar.markdown("To get started <ol><li>Enter the URL link or upload a file you wish to summarize</li> <li>Hit <i>Get Data</i>.</li> <li>Get analyzing</li></ol>",unsafe_allow_html=True)
 
 input_url = st.text_input('Insert an URL here', value="")
-if st.button('Get Data'):
+if st.button('Get Transcript'):
     st.video(data=input_url)
-
-
-
-
-
+    st.write(get_transcript(url=input_url))
+    
 
 file_types = ['Audio', 'Video']
 files = st.radio('File Types', file_types)
@@ -35,10 +34,10 @@ elif files == "Video":
         st.video(video_bytes)
 
 
-if st.button("Get Transcript"):
-    pass
+if st.button("Get File Transcript"):
+    get_transcript(input_file)
 
-model_sizes = ['Small', 'Medium','Large']
-capacity = st.radio('Model Sizes for Transcript', model_sizes)
+# model_sizes = ['Small', 'Medium','Large']
+# capacity = st.radio('Model Sizes for Transcript', model_sizes)
 
 
