@@ -1,0 +1,6 @@
+streamlit
+cohere
+pytube
+pydub
+genanki
+git+https://github.com/openai/whisper.git
